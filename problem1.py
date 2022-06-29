@@ -1,18 +1,22 @@
 class Solution:
-    def checkXMatrix(self, grid: list[list[int]]) -> bool:
-        dupes = []
-        for i in range(len(grid)):
-            for a, b, c, d in grid:
-                print(a,b,c,d)
-                if a != 0:
-                    dupes.append(a)
+    def twoSumLessThanK(self, A, K):
+        
+        # start = 0
+        # end  = len(A)-1
+        # result = 0
 
+        # while start < end:
+        #     if A[start] + A[end] <= K:
+        #         temp  = A[start] + A[end]
+        #         result = max(temp, result)
+        #     end -= 1
 
-
-
+        # return result
+        a = ['a', 'b', 'c', 3, 4, 'd', 6, 7, 8]
+        b = [0, 1, 2, 4, 6, 7, 8]
+        b = [a[i] for i in b]
+        return b
 
 
 s = Solution()
-print(s.checkXMatrix([[2,0,0,1],[0,3,1,0],[0,5,2,0],[4,0,0,2]]))
-# print(s.countHousePlacements(2))
-# print(s.countHousePlacements(3))
+print(s.twoSumLessThanK([34, 23, 1, 24, 75, 33, 54, 8], 160))
