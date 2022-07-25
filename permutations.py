@@ -1,15 +1,27 @@
-class Solution:
-    def permute(self, nums):
-        if not nums:
-            return [[]]
-        res = []
-        for e in nums:
-            temp = nums[:]
-            temp.remove(e)
-            res.extend([[e] + r for r in self.permute(temp)])
+import itertools
 
-        return res
+def iteration(nums):
+  result = []
+  for i in range(1, len(nums) + 1):
+    result.extend(list(itertools.permutations(nums, r=i)))
+  res = result[-1]
+
+  for value in res:
+    print(value, end=" ")
+  print("")
+
+def permutaions():
+  n = int(input())
+  for j in range(n):
+    val = int(input())
+    dupes = []
+    result = []
+    for i in range(1, val + 1):
+      dupes.append(i)
+
+    iteration(dupes)
 
 
-s = Solution()
-print(s.permute([1, 2, 3]))
+permutaions()
+
+
