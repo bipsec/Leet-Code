@@ -1,60 +1,53 @@
 class Node:
-    def __init__(self, value, next_node = None, prev_node = None) :
-        
-        self.value = value
-        self.next = next_node
-        self.prev = prev_node
+    def __init__(self, value):
+        self.prev = None
+        self.next = None
+        self.val = value
 
-        def __str__(self):
-            return str(self.value)
 
 class LinkedList:
-    def __init__(self, values = None) :
+    def __init__(self):
         self.head = None
         self.tail = None
 
-        if values is not None:
-            self.add_multiple_nodes(values)
+    def add(self, val):
+        node = Node(val)
 
-    def add_node(self, value):
-        if self.head is None:
-            self.head = self.tail = Node(value)
+        if self.tail is None:
+            self.head = node
+            self.tail = node
         else:
-            self.tail.next = Node(value)
-            self.tail = self.tail.next
-        return self.tail
-    
-    def add_multiple_nodes(self, values):
-        for value in values:
-            self.add_node(value)
+            self.tail.next = node
+            node.prev = self.head
+            self.tail = node
 
-    def add_node_as_head(self, value):
-        if self.head is None:
-            self.head = self.tail = Node(value)
-        else:
-            self.head = Node(value, self.head)
-        return self.head
-    
-    def __str__(self):
-        return '-->'.join([str(node) for node in self])
-
-    def __len__(self):
-        count = 0
+    def reverse(self):
         node = self.head
-        while node:
-            count += 1
+        prev = None
+        while node is not None:
+            next = node.next
+            node.next = prev
+            prev = node
+            node = next
+        self.head = prev
+
+    def __str__(self):
+        vals = []
+        node = self.head
+        while node is not None:
+            vals.append(node.val)
             node = node.next
-        return count
+        return f"[{', '.join(str(val) for val in vals)}]"
 
-    def __iter__(self):
-        current = self.head
-        while current:
-            yield current
-            current = current.next
-    
-    @property
-    def values(self):
-        return [node.value for node in self]
 
+my_list = LinkedList()
+my_list.add(1)
+my_list.add(2)
+my_list.add(3)
+my_list.add(4)
+
+
+my_list.reverse()
+print(my_list)
 
 

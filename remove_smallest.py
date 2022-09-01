@@ -1,19 +1,20 @@
-def remove():
+def game():
     n = int(input())
 
-    while n:
+    for i in range(n):
         a = int(input())
-        dupes = list(map(int, input().strip().split()))
-        seen = []
-        for j in range(1, len(dupes)):
-            if dupes[j] - dupes[j-1] <= 1:
-                seen.append(dupes[j-1])
 
-        seen.append(dupes[-1])
-        print(seen)
+        nums = list(map(int, input().strip().split()))[:a]
+        nums.sort()
+        j = 0
+        res = "Yes"
+        while j < len(nums)-1:
+            val = int(nums[j]) - int(nums[j+1])
 
-        n -= 1
+            if val < -1:
+                res = "No"
+                break
+            j += 1
+        print(res)
 
-
-
-remove()
+game()
