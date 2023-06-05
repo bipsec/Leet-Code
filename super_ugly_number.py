@@ -1,19 +1,34 @@
-class Solution:
-    def nthSuperUglyNumber(self, n: int, primes: list[int]) -> int:
-        n = 100
-        prime = [True for i in range(n+1)]
+def isPrime(k):
+    if k <= 1:
+        return 0
+    if k == 2 or k == 3:
+        return 1
 
-        p = 2
-        while (p*p <= n):
-            if prime[p] == True:
-                for i in range(p*p, n+1, p):
-                    prime[i] = False
-            p += 1
+    if k % 2 == 0 or k % 3 == 0:
+        return 0
 
-        for p in range(2, n+1):
-            if prime[p]:
-                print(p)
+    for i in range(5, 1 + int(k ** 0.5), 6):
+        if k % i == 0 or k % (i + 2) == 0:
+            return 0
+
+    return 1
 
 
-s = Solution()
-print(s.nthSuperUglyNumber(12, [2, 7, 13, 19]))
+def nThPrime(n):
+    i = 2
+    while n > 0:
+
+        if isPrime(i):
+            n -= 1
+
+        i += 1
+
+    i -= 1
+
+    return i
+
+
+# Driver code
+print("5th prime number is :", nThPrime(12))
+# print("7th prime number is :", nThPrime(7))
+# print("10th prime number is :", nThPrime(10))
