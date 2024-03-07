@@ -1,2 +1,25 @@
-# Leet Code
-Leetcode and other online judge problems solution file by the problems name and number. I have tried to solve more than 100 problems and still continuing the journey as well as counting on and on...
+## Table of Contents
+
+This repo helps to convert blg file to csv file and after preprocessing all the converted files how to insert them into database in a proper format.
+
+### Project Structure
+
+```sh
+blg_converter/
+├── app/
+│   ├── Codeforces/
+│   │   ├── __init__.py
+│   ├── ML_Practice/
+│   │   ├── practice files
+│   ├── Prime Number/
+│   │   ├── prime_numbers_in_range.py
+│   ├── Problems/
+│   │   ├── problem_solving_files
+├── .gitignore
+├── README.md
+
+```
+
+
+
+
