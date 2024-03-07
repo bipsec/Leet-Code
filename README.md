@@ -1,6 +1,6 @@
 ## Table of Contents
 
-This repo helps to convert blg file to csv file and after preprocessing all the converted files how to insert them into database in a proper format.
+This repo is all about problem solving of different online platforms. I am trying to solve problems and learning new things and strategy each day. I love this problem solvoing journey as I can feel so comfortable doing such.
 
 ### Project Structure
 
