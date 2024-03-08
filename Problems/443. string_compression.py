@@ -18,7 +18,7 @@ class Solution:
 # modify inplace array  -_- -_-
 
 
-
+# next to solve - 2696,1750
 
 
 s  = Solution()
