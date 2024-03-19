@@ -8,13 +8,12 @@ class Solution:
                 dupes[nums[i]] += 1
             else:
                 dupes[nums[i]] = 1
-
+        ans = 0
         for item in list(dupes.values()):
             if item == 1:
                 return -1
-        return []
-
-# need to follow the total approach required to make the array empty.
+            ans += (item + 2) // 3
+        return ans
 
 
 s = Solution()
