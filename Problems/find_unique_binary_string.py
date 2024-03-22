@@ -1,14 +1,10 @@
 class Solution:
-    def findDifferentBinaryString(self, nums: List[str]) -> str:
+    def findDifferentBinaryString(self, nums) -> str:
         length = len(nums)
         number = []
         for i in range(length):
             number.append('0' if nums[i][i] == '1' else '1')
         return ''.join(number)
-
-
-
-# matha kharap hoye jay manusher solution dekhle >_<
 
 
 s = Solution()
