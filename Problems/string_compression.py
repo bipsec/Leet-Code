@@ -1,17 +1,36 @@
 class Solution:
-  def compress(self, chars) -> int:
-    if len(chars) == 1:
-      return chars
+    def compress(self, chars) -> int:
+        if len(chars) <= 1:
+            return len(chars)
 
-    start, end = 0, len(chars) - 1
-    count = 0
-    for i in range(len(chars)):
-      while start <= end:
-        if chars[start] == chars[start+1]:
-          count += 1
-        chars.insert(i, count)
-        start += 1
-    return chars
+        compressed_index = 0
+        current_char = chars[0]
+        count = 1
+
+        for i in range(1, len(chars)):
+            if chars[i] == current_char:
+                count += 1
+            else:
+                chars[compressed_index] = current_char
+                compressed_index += 1
+                if count > 1:
+                    for digit in str(count):
+                        chars[compressed_index] = digit
+                        compressed_index += 1
+                current_char = chars[i]
+                count = 1
+
+        chars[compressed_index] = current_char
+        compressed_index += 1
+        if count > 1:
+            for digit in str(count):
+                chars[compressed_index] = digit
+                compressed_index += 1
+
+        return compressed_index
+
+
+# not mine
 
 
 s = Solution()
