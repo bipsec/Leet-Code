@@ -11,6 +11,3 @@ class Solution:
             dictForS[s[i]] = t[i]
             dictForT[t[i]] = s[i]
         return True
-
-
-
