@@ -15,4 +15,3 @@ def make_alex_happy():
 
 
 print(make_alex_happy())
-
