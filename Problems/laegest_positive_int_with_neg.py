@@ -1,15 +1,11 @@
 class Solution:
     def findMaxK(self, nums) -> int:
         nums.sort()
-
-        stack = []
-        maxVal = float('-inf')
-        for item in nums:
-            if item < 1:
-                stack.append(item)
-                pos = item * -1
-                if item > maxVal and pos in nums[:]:
-                    maxVal = item * -1
+        for item in range(len(nums)):
+            if nums[item] < 1:
+                pos = nums[item] * -1
+                if pos in nums[item+1:]:
+                    maxVal = pos
                     return maxVal
         return -1
 
