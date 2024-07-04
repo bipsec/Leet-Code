@@ -1,5 +1,5 @@
 class Solution:
-    def findIntersectionValues(self, nums1: List[int], nums2: List[int]) -> List[int]:
+    def findIntersectionValues(self, nums1, nums2):
         count, count_1 = 0, 0
         for item in nums1:
             if item in nums2:
