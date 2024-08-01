@@ -5,15 +5,6 @@ class Solution:
         return right
 
 
-
-
-
-
-
-
-
-
-
 s = Solution()
 print(s.rangeBitwiseAnd(left=5, right=7))
 print(s.rangeBitwiseAnd(left=0, right=0))
