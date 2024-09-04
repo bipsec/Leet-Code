@@ -1,9 +1,8 @@
 class Solution:
     def getLucky(self, s: str, k: int) -> int:
-        letters = {chr(i + 96): i for i in range(1, 27)}
         ans = ""
         for item in s:
-            ans += str(letters[item])
+            ans += str(ord(item)-96)
 
         while k > 0:
             res = 0
