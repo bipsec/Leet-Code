@@ -1,30 +1,23 @@
 class Solution:
 
-    def unique_dict(self, arr):
-        dict = {}
-
-        for item in arr:
-            if item not in dict:
-                dict[item] = 1
-            elif item in dict:
-                dict[item] -= 1
-        return dict
-
     def uncommonFromSentences(self, s1: str, s2: str):
 
-        s1 = s1.split()
-        s2 = s2.split()
+        s1 = s1.split() + s2.split()
 
-        first_dict = self.unique_dict(s1)
-        second_dict = self.unique_dict(s2)
+        dupes = {}
+
+        for item in s1:
+            if item not in dupes:
+                dupes[item] = 1
+            elif item in dupes:
+                dupes[item] -= 1
+            else:
+                dupes[item] += 1
 
         res = []
-        for key, val in first_dict.items():
-            if key not in second_dict and val > 0:
-                res.append(key)
 
-        for key, val in second_dict.items():
-            if key not in first_dict and val > 0:
+        for key, val in dupes.items():
+            if val == 1:
                 res.append(key)
 
         return res
