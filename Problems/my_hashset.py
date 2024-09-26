@@ -5,21 +5,12 @@ class MyHashSet:
 
     def add(self, key: int):
         self.dupes.append(key)
-        print(f"After adding item: {key}", self.dupes)
-        # return self.dupes
 
     def remove(self, key: int) -> bool:
-        try:
-            self.dupes = [x for x in self.dupes if x != key]
-            return True
-        except Exception:
-            return False
+        self.dupes = [x for x in self.dupes if x != key]
 
     def contains(self, key: int) -> bool:
-        for item in self.dupes:
-            if item == key:
-                print(f"After Checking for : {key}", self.dupes)
-                return True
+        return key in self.dupes
 
 
 # Your MyHashSet object will be instantiated and called as such:
