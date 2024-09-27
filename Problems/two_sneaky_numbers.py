@@ -1,15 +1,13 @@
 class Solution:
     def getSneakyNumbers(self, nums):
-
-        dupes = {}
         res = []
+        nums.sort()
 
-        for item in nums:
-            if item not in dupes:
-                dupes[item] = 1
-            else:
-                res.append(item)
-        return res
+        for item in range(len(nums)):
+            if nums[item] == nums[item+1]:
+                res.append(nums[item])
+            if len(res) == 2:
+                return res
 
 
 s = Solution()
