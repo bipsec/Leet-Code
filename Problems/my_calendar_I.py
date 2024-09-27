@@ -4,7 +4,7 @@ class MyCalendar:
         self.dupes = []
 
     def book(self, start: int, end: int) -> bool:
-        for i,j in self.dupes:
+        for i, j in self.dupes:
             if i < end and start < j:
                 return False
         self.dupes.append((start, end))
