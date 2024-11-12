@@ -13,6 +13,25 @@ class Solution:
 
     # for larger array it gives TLE :O(n**2)
 
+    def find_maximum_XOR(self, nums):
+        max_xor = 0
+        mask = 0
+        for i in range(31, -1, -1):
+            mask |= (1 << i)
+            prefixes = {num & mask for num in nums}
+
+            potential_max = max_xor | (1 << i)
+            found = False
+            for prefix in prefixes:
+                if potential_max ^ prefix in prefixes:
+                    found = True
+                    break
+            if found:
+                max_xor = potential_max
+        return max_xor
+
+    # not mine : O(n * logM)
+
 
 s = Solution()
 # print(s.findMaximumXOR(nums=[3, 10, 5, 25, 2, 8]))
