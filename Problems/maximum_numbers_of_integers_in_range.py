@@ -18,7 +18,19 @@ class Solution:
                 return count - 1
         return count
 
+    def maxCount(self, banned, n: int, maxSum: int) -> int:     # good approach
 
+        count = 0
+        val = 0
+        dupes = set(banned)
+
+        for i in range(1, n + 1):
+            if i not in dupes:
+                if val + i > maxSum:
+                    break
+                val += i
+                count += 1
+        return count
 
 
 s = Solution()
