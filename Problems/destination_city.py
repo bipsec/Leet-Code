@@ -24,6 +24,7 @@ class Solution:
 s = Solution()
 # print(s.destCity(paths=[["B", "C"], ["D", "B"], ["C", "A"]]))
 print(s.destCity(paths=[["B", "C"], ["A", "Z"], ["C", "A"]]))
-print(s.destCity(paths=[["qMTSlfgZlC","ePvzZaqLXj"],["xKhZXfuBeC","TtnllZpKKg"],["ePvzZaqLXj","sxrvXFcqgG"],["sxrvXFcqgG","xKhZXfuBeC"],["TtnllZpKKg","OAxMijOZgW"]]))
+print(s.destCity(paths=[["qMTSlfgZlC", "ePvzZaqLXj"], ["xKhZXfuBeC", "TtnllZpKKg"], ["ePvzZaqLXj", "sxrvXFcqgG"],
+                        ["sxrvXFcqgG", "xKhZXfuBeC"], ["TtnllZpKKg", "OAxMijOZgW"]]))
 # print(s.destCity(paths=[["London", "New York"], ["New York", "Lima"], ["Lima", "Sao Paulo"]]))
 # print(s.destCity(paths=[["London", "New York"]]))
