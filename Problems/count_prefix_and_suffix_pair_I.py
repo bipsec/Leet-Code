@@ -9,7 +9,7 @@ class Solution:
     def countPrefixSuffixPairs(self, words) -> int:
         count = 0
         for i in range(len(words)):
-            for j in range(i+1, len(words)):
+            for j in range(i + 1, len(words)):
                 checker = self.check(words[i], words[j])
                 if checker:
                     count += 1
@@ -20,4 +20,4 @@ class Solution:
 s = Solution()
 print(s.countPrefixSuffixPairs(words=["a", "aba", "ababa", "aa"]))
 print(s.countPrefixSuffixPairs(words=["pa", "papa", "ma", "mama"]))
-print(s.countPrefixSuffixPairs(words = ["abab","ab"]))
+print(s.countPrefixSuffixPairs(words=["abab", "ab"]))
