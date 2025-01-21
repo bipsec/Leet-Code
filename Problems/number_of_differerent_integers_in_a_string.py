@@ -18,6 +18,22 @@ class Solution:
 
         return len(ans)
 
+class Solution:
+    def numDifferentIntegers(self, word: str) -> int:
+        s= ""
+        res = set()
+        for i in range(len(word)):
+            if word[i].isdigit():
+                s += word[i]
+            else:
+                if s:
+                    res.add(int(s))
+                    s = ""
+
+        if s:
+            res.add(int(s))
+        return len(res)
+
 
 s = Solution()
 print(s.numDifferentIntegers(word="a123bc34d8ef34"))
