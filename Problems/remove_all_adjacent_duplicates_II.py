@@ -11,8 +11,19 @@ class Solution:
 
         return "".join(stack)
 
+    def removeDuplicatesII(self, s: str, k: int) -> str:
+        stack = []
+        for elem in s:
+            stack.append(elem)
+            if len(stack) >= k and stack[-k:] == [elem] * k:
+                stack = stack[:-k]
+        return "".join(stack)
+
 
 s = Solution()
 print(s.removeDuplicates(s="abcd", k=2))
 print(s.removeDuplicates(s="deeedbbcccbdaa", k=3))
 print(s.removeDuplicates(s="pbbcggttciiippooaais", k=2))
+print(s.removeDuplicatesII(s="abcd", k=2))
+print(s.removeDuplicatesII(s="deeedbbcccbdaa", k=3))
+print(s.removeDuplicatesII(s="pbbcggttciiippooaais", k=2))
