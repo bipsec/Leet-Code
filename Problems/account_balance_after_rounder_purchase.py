@@ -1,6 +1,13 @@
 class Solution:
     def accountBalanceAfterPurchase(self, purchaseAmount: int) -> int:
-        pass
+
+        flag = True
+
+        while flag:
+            if purchaseAmount <= 10:
+                return 100 - 10
+            else:
+                pass
 
 
 s = Solution()
